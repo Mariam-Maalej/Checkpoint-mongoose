@@ -38,7 +38,7 @@ router.put("/addFood/:_id", (req, res) => {
   const { _id } = req.params;
   Person.findOneAndUpdate(
     { _id },
-    { $push: { favoriteFoods: "Hamburger" } },
+    { $addToSet: { favoriteFoods: "Hamburger" } },
     {
       new: true,
       upsert: true,
